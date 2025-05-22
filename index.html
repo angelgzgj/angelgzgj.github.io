@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -18,17 +18,83 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
     }
     .logo {
       font-size: 24px;
       color: #1da9cc;
       font-weight: bold;
     }
+    nav {
+      margin-left: auto;
+    }
     nav a {
       margin: 0 10px;
       text-decoration: none;
       color: #333;
     }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    nav a:hover {
+      background: #1da9cc;
+      color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(29, 169, 204, 0.25);
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 8px 16px;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+    }
+    @media screen and (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #f7f7f7;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      nav a {
+        margin: 10px 0;
+        
+      }
+       nav a:hover {
+      background: #1da9cc;
+      color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(29, 169, 204, 0.25);
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 8px 16px;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    .hamburger {
+      box-shadow: 0 0 0 4px #1da9cc, 0 0 10px 4px #1da9cc;
+      border-radius: 10px;
+      padding: 6px;
+      background: #eaf6fb;
+      transition: box-shadow 0.3s;
+    }
+      .hamburger {
+        display: flex;
+      }
+      nav.show {
+        display: flex;
+      }
+    }
+
     .hero {
       background: url('tu-imagen.jpg') no-repeat center center/cover;
       color: white;
@@ -68,25 +134,30 @@
       padding: 20px;
       border-left: 5px solid #1da9cc;
     }
-    @media screen and (max-width: 768px) {
-      .services {
-        flex-direction: column;
-      }
-      .service {
-        width: 90%;
-        margin: 10px auto;
-      }
-      .info-box {
-        flex: 1 1 100%;
-      }
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    .hero-overlay h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3em;
+      font-weight: 700;
+    }
+    .hero-overlay p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5em;
     }
   </style>
 </head>
 <body>
 
   <header>
-  <div class="logo">Servicios Medicos de Traslados</div>
-    <nav>
+    <div class="logo">Servicios Medicos de Traslados</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <nav id="navMenu">
       <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
       <a href="ambulancia.html">Ambulancia</a>
@@ -94,58 +165,41 @@
       <a href="agenda.html">Agenda</a>
       <a href="galeria.html">Galería</a>
     </nav>
-    <div>
-
-    </div>
-    <style>
-      nav {
-      margin-left: auto;
-      }
-    </style>
   </header>
 
   <section class="hero">
     <div class="hero-overlay">
       <h1>Servicios Medicos de Traslados</h1>
-      <p>Conoce todo sobre nosotros </p>
+      <p>Conoce todo sobre nosotros</p>
       <button>LEER MÁS</button>
     </div>
   </section>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-    .hero-overlay h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
-    font-weight: 700;
-    }
-    .hero-overlay p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    }
-  </style>
-
-    <div style="position: relative; left: 20%;">
-      <img src="img/foto2.jpg" alt="Foto 2" style="width: 28%; height: auto; object-fit: cover; border: 5px solid #00008b; border-radius: 10px; margin-right: 10px;">
-      <img src="img/foto3.jpg" alt="Foto 3" style="width: 28%; height: auto; object-fit: cover; border: 5px solid #00008b; border-radius: 10px; margin-left: 10px;">
-    </div>
-  </section>
+  <div style="position: relative; left: 20%;">
+    <img src="img/foto2.jpg" alt="Foto 2" style="width: 28%; height: auto; object-fit: cover; border: 5px solid #00008b; border-radius: 10px; margin-right: 10px;">
+    <img src="img/foto3.jpg" alt="Foto 3" style="width: 28%; height: auto; object-fit: cover; border: 5px solid #00008b; border-radius: 10px; margin-left: 10px;">
+  </div>
 
   <section class="info-section">
-    <div class="info-box">
     <div class="info-box">
       <h3>Médicos Calificados</h3>
       <p>Todos nuestros trabajadores llevaron cursos de primeros auxilios y sus posteriores</p>
     </div>
     <div class="info-box">
       <h3>Servicio 24 Horas</h3>
-      <p>Contamos con varios profesionales para estar disponibles a cualquier hora </p>
+      <p>Contamos con varios profesionales para estar disponibles a cualquier hora</p>
     </div>
     <div class="info-box">
       <h3>Departamento de Emergencias</h3>
-      <p>Acudimos a emergencias lo antes posible </p>
+      <p>Acudimos a emergencias lo antes posible</p>
     </div>
   </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+  </script>
 
 </body>
 </html>

@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clínico</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -12,35 +13,110 @@
       padding: 0;
       background: #fff;
     }
+
     header {
       background: #f7f7f7;
       padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
     }
+
     .logo {
       font-size: 24px;
       color: #1da9cc;
       font-weight: bold;
     }
+
+    nav {
+      margin-left: auto;
+    }
+
     nav a {
       margin: 0 10px;
       text-decoration: none;
       color: #333;
     }
+ nav a:hover {
+      background: #1da9cc;
+      color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(29, 169, 204, 0.25);
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 8px 16px;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+      transition: background-color 0.3s;
+    }
+
+    .hamburger:hover div {
+      background-color: #1da9cc;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #f7f7f7;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      nav.show {
+        display: flex;
+      }
+    }
+
     .hero {
-      background: url('tu-imagen.jpg') no-repeat center center/cover;
+      background: url('img/foto1.jpg') no-repeat center center/cover;
       color: white;
       padding: 100px 20px;
       position: relative;
     }
+
     .hero-overlay {
       background-color: rgba(0, 123, 255, 0.7);
       padding: 50px;
       text-align: center;
       color: white;
     }
+
+    .hero-overlay h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3em;
+      font-weight: 700;
+    }
+
+    .hero-overlay p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5em;
+    }
+
     .services {
       display: flex;
       justify-content: space-around;
@@ -48,6 +124,7 @@
       padding: 30px 10px;
       text-align: center;
     }
+
     .service {
       width: 20%;
       background: #1da9cc;
@@ -56,11 +133,13 @@
       margin: 5px;
       border-radius: 10px;
     }
+
     .info-section {
       display: flex;
       flex-wrap: wrap;
       padding: 20px;
     }
+
     .info-box {
       flex: 1 1 45%;
       margin: 10px;
@@ -68,14 +147,17 @@
       padding: 20px;
       border-left: 5px solid #1da9cc;
     }
+
     @media screen and (max-width: 768px) {
       .services {
         flex-direction: column;
       }
+
       .service {
         width: 90%;
         margin: 10px auto;
       }
+
       .info-box {
         flex: 1 1 100%;
       }
@@ -83,10 +165,16 @@
   </style>
 </head>
 <body>
-<header>
+
+  <header>
     <div class="logo">Servicios Medicos de Traslados</div>
-    <nav>
-        <a href="index.html">Inicio</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="navMenu">
+      <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
       <a href="ambulancia.html">Ambulancia</a>
       <a href="consultas.html">Contacto</a>
@@ -94,43 +182,16 @@
       <a href="galeria.html">Galería</a>
     </nav>
   </header>
+
   <section class="hero">
     <div class="hero-overlay">
-      <h1>Nuestros vehiculos</h1>
-      <p style="opacity: 1;">Conoce nuestras modernas ambulancias equipadas para cualquier emergencia.</p>
+      <h1>Nuestros vehículos</h1>
+      <p>Conoce nuestras modernas ambulancias equipadas para cualquier emergencia.</p>
     </div>
   </section>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-    .hero-overlay h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
-    font-weight: 700;
-    }
-    .hero-overlay p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    }
-  </style>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-    .hero-overlay h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
-    font-weight: 700;
-    }
-    .hero-overlay p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    }
-  </style>
-  <style>
-    .hero {
-      background: url('img/foto1.jpg') no-repeat center center/cover;
-    }
-  </style>
+
   <section class="ambulance-details">
-    <h2>Características de la Ambulancia</h2>
+    <h2 style="text-align:center; margin-top: 30px;">Características de la Ambulancia</h2>
     <div class="info-section">
       <div class="info-box">
         <h3>Modelo</h3>
@@ -138,14 +199,14 @@
       </div>
       <div class="info-box">
         <h3>Capacidad</h3>
-        <p>Hasta 3 pasajeros mas el paciente</p>
+        <p>Hasta 3 pasajeros más el paciente</p>
       </div>
       <div class="info-box">
         <h3>Equipamiento</h3>
-        <p>Incluye equipo médico avanzado, camilla, y sistema de monitoreo.</p>
+        <p>Incluye equipo médico avanzado, camilla y sistema de monitoreo.</p>
       </div>
       <div class="info-box">
-        <h3>Equipaje </h3>
+        <h3>Equipaje</h3>
         <p>Variedad de medicamentos e instrumentos médicos.</p>
       </div>
       <div class="info-box">
@@ -154,6 +215,12 @@
       </div>
     </div>
   </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+  </script>
 
 </body>
 </html>

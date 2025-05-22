@@ -2,9 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Clínico</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -12,72 +13,149 @@
       padding: 0;
       background: #fff;
     }
+
     header {
       background: #f7f7f7;
       padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
+
     .logo {
       font-size: 24px;
       color: #1da9cc;
       font-weight: bold;
     }
+
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
     nav a {
-      margin: 0 10px;
       text-decoration: none;
       color: #333;
+      padding: 5px 10px;
+      transition: background 0.3s;
     }
+
+    nav a:hover {
+      background: #1da9cc;
+      color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(29, 169, 204, 0.25);
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 8px 16px;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+
+    /* Botón hamburguesa oculto en desktop */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #000000;
+      border-radius: 2px;
+    }
+
+    /* Responsive para móvil */
+    @media screen and (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+      nav.show {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
     .hero {
       background: url('tu-imagen.jpg') no-repeat center center/cover;
       color: white;
       padding: 100px 20px;
       position: relative;
+      text-align: center;
     }
+
     .hero-overlay {
       background-color: rgba(0, 123, 255, 0.7);
       padding: 50px;
-      text-align: center;
       color: white;
     }
-    .services {
-      display: flex;
-      justify-content: space-around;
-      background: #eaf6fb;
-      padding: 30px 10px;
-      text-align: center;
+
+    .hero-overlay h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3em;
+      font-weight: 700;
+      margin: 0;
     }
-    .service {
-      width: 20%;
-      background: #1da9cc;
-      color: white;
-      padding: 20px;
-      margin: 5px;
-      border-radius: 10px;
+
+    .hero-overlay p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5em;
     }
+
     .info-section {
       display: flex;
       flex-wrap: wrap;
       padding: 20px;
+      justify-content: center;
     }
+
     .info-box {
-      flex: 1 1 45%;
-      margin: 10px;
+      flex: 1 1 80%;
       background: #f2f2f2;
       padding: 20px;
+      margin: 10px;
       border-left: 5px solid #1da9cc;
     }
+
+    .info-box a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #1da9cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .info-box a:hover {
+      background-color: #0d6efd;
+    }
+
     @media screen and (max-width: 768px) {
-      .services {
-        flex-direction: column;
+      nav {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
       }
-      .service {
-        width: 90%;
-        margin: 10px auto;
-      }
+
       .info-box {
         flex: 1 1 100%;
+      }
+
+      .hero-overlay h1 {
+        font-size: 2em;
+      }
+
+      .hero-overlay p {
+        font-size: 1.2em;
       }
     }
   </style>
@@ -85,53 +163,49 @@
 <body>
 
   <header>
-  <div class="logo">Servicios Medicos de Traslados</div>
-    <nav>
-       <a href="index.html">Inicio</a>
+    <div class="logo">Servicios Médicos de Traslados</div>
+
+    <!-- Botón hamburguesa -->
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <nav id="navMenu">
+      <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
       <a href="ambulancia.html">Ambulancia</a>
       <a href="consultas.html">Contacto</a>
       <a href="agenda.html">Agenda</a>
       <a href="galeria.html">Galería</a>
     </nav>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-    .hero-overlay h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
-    font-weight: 700;
-    }
-    .hero-overlay p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    }
-  </style>
-
-    <div>
-
-    </div>
-    <style>
-      nav {
-      margin-left: auto;
-      }
-    </style>
   </header>
-<div class="hero">
-      <div class="hero-overlay">
-        <h1>Contáctanos mediante los datos de abajo</h1>
-      </div>
-    </div>
-<div class="info-section">
-  <div class="info-box">
-    <h3>Contacto</h3>
-    <p><strong>Correo:</strong> smmartinglez@gmail.com</p>
-    <p><strong>Teléfono:</strong> +52 1 644 455 0793</p>
-    <p><strong>Ubicación:</strong> Tamaulipas 168, colonia centro, Cd Obregón Sonora</p>
-    <p>Si no tienes prisa, puedes agendarlo en:</p>
-    <a href="agenda.php" style="display: inline-block; padding: 10px 20px; background-color: #1da9cc; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px;">Agendar</a>
-   
-  </div>
-</div>
 
+  <div class="hero">
+    <div class="hero-overlay">
+      <h1>Contáctanos mediante los datos de abajo</h1>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <div class="info-box">
+      <h3>Contacto</h3>
+      <p><strong>Correo:</strong> smmartinglez@gmail.com</p>
+      <p><strong>Teléfono:</strong> +52 1 644 455 0793</p>
+      <p><strong>Ubicación:</strong> Tamaulipas 168, colonia centro, Cd. Obregón, Sonora</p>
+      <p>Si no tienes prisa, puedes agendarlo en:</p>
+      <a href="agenda.php">Agendar</a>
+    </div>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>

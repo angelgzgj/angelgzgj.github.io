@@ -2,9 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clínico</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clínico - Galería</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -18,197 +19,178 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
     .logo {
       font-size: 24px;
       color: #1da9cc;
       font-weight: bold;
     }
+    nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-left: auto;
+    }
     nav a {
-      margin: 0 10px;
       text-decoration: none;
       color: #333;
+      padding: 5px 10px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background-color: #1da9cc;
+      color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(29, 169, 204, 0.25);
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 8px 16px;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
     }
     .hero {
       background: url('tu-imagen.jpg') no-repeat center center/cover;
       color: white;
       padding: 100px 20px;
+      text-align: center;
       position: relative;
     }
     .hero-overlay {
       background-color: rgba(0, 123, 255, 0.7);
       padding: 50px;
-      text-align: center;
       color: white;
     }
-    .services {
-      display: flex;
-      justify-content: space-around;
-      background: #eaf6fb;
-      padding: 30px 10px;
-      text-align: center;
+    .hero-overlay h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3em;
+      font-weight: 700;
+      margin: 0 0 10px;
     }
-    .service {
-      width: 20%;
-      background: #1da9cc;
-      color: white;
-      padding: 20px;
-      margin: 5px;
-      border-radius: 10px;
+    .hero-overlay p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5em;
+      margin: 0;
     }
-    .info-section {
+    .gallery-container {
+      background: #fff;
+      padding: 40px 0;
+      max-width: 1000px;
+      margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
-      padding: 20px;
+      gap: 20px;
+      justify-content: center;
     }
-    .info-box {
-      flex: 1 1 45%;
-      margin: 10px;
-      background: #f2f2f2;
-      padding: 20px;
-      border-left: 5px solid #1da9cc;
+    .gallery-container img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gallery-container img:hover {
+      transform: scale(1.05);
+    }
+    /* Modal styles */
+    .modal-galeria {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-galeria img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+    }
+    .cerrar-modal {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 2.5em;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      background: none;
+      border: none;
+      z-index: 10001;
     }
     @media screen and (max-width: 768px) {
-      .services {
-        flex-direction: column;
+      .hero-overlay h1 {
+        font-size: 2em;
       }
-      .service {
-        width: 90%;
-        margin: 10px auto;
+      .hero-overlay p {
+        font-size: 1.2em;
       }
-      .info-box {
-        flex: 1 1 100%;
+      .gallery-container img {
+        width: 140px;
+        height: 100px;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
-  <div class="logo">Servicios Medicos de Traslados</div>
+    <div class="logo">Servicios Médicos de Traslados</div>
     <nav>
-            <a href="index.html">Inicio</a>
+      <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
       <a href="ambulancia.html">Ambulancia</a>
       <a href="consultas.html">Contacto</a>
       <a href="agenda.html">Agenda</a>
       <a href="galeria.html">Galería</a>
     </nav>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-    .hero-overlay h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
-    font-weight: 700;
-    }
-    .hero-overlay p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    }
-  </style>
-
-    <div>
-
-    </div>
-    <style>
-      nav {
-      margin-left: auto;
-      }
-    </style>
   </header>
 
   <section class="hero">
     <div class="hero-overlay">
       <h1>Galería de fotos</h1>
-      <p> </p>
+      <p></p>
     </div>
   </section>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-    .hero-overlay h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
-    font-weight: 700;
-    }
-    .hero-overlay p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    }
-  </style>
-  <div style="background: #fff; padding: 40px 0;">
-    <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-      <img src="img/foto1.jpg" alt="Foto 1" style="width: 180px; height: 120px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-      <img src="img/foto2.jpg" alt="Foto 2" style="width: 180px; height: 120px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-      <img src="img/foto3.jpg" alt="Foto 3" style="width: 180px; height: 120px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-      <img src="img/foto4.jpg" alt="Foto 4" style="width: 180px; height: 120px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-      <img src="img/foto5.jpg" alt="Foto 5" style="width: 180px; height: 120px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-    </div>
+  <div class="gallery-container">
+    <img src="img/foto1.jpg" alt="Foto 1" />
+    <img src="img/foto2.jpg" alt="Foto 2" />
+    <img src="img/foto3.jpg" alt="Foto 3" />
+    <img src="img/foto4.jpg" alt="Foto 4" />
+    <img src="img/foto5.jpg" alt="Foto 5" />
   </div>
-<!-- Estilos para el modal -->
-<style>
-    .galeria-img {
-        width: 360px !important;
-        height: 240px !important;
-        cursor: pointer;
-        transition: transform 0.2s;
-    }
-    .galeria-img:hover {
-        transform: scale(1.05);
-    }
-    .modal-galeria {
-        display: none;
-        position: fixed;
-        z-index: 9999;
-        left: 0; top: 0;
-        width: 100vw; height: 100vh;
-        background: rgba(0,0,0,0.8);
-        justify-content: center;
-        align-items: center;
-    }
-    .modal-galeria img {
-        max-width: 90vw;
-        max-height: 80vh;
-        border-radius: 10px;
-        box-shadow: 0 2px 16px rgba(0,0,0,0.3);
-    }
-    .modal-galeria .cerrar-modal {
-        position: absolute;
-        top: 30px;
-        right: 40px;
-        font-size: 2.5em;
-        color: #fff;
-        cursor: pointer;
-        font-weight: bold;
-        z-index: 10001;
-        background: none;
-        border: none;
-    }
-</style>
-<!-- Modal HTML -->
-<div class="modal-galeria" id="modalGaleria">
-    <button class="cerrar-modal" id="cerrarModalGaleria">&times;</button>
-    <img src="" alt="Imagen ampliada" id="imgModalGaleria">
-</div>
-<script>
-    // Aplica la clase a todas las imágenes de la galería
-    document.querySelectorAll('img[src^="img/foto"]').forEach(function(img) {
-        img.classList.add('galeria-img');
-        img.addEventListener('click', function() {
-            document.getElementById('imgModalGaleria').src = this.src;
-            document.getElementById('modalGaleria').style.display = 'flex';
-        });
-    });
-    // Cerrar modal al hacer clic en la X o fuera de la imagen
-    document.getElementById('cerrarModalGaleria').onclick = function() {
-        document.getElementById('modalGaleria').style.display = 'none';
-    };
-    document.getElementById('modalGaleria').onclick = function(e) {
-        if (e.target === this) {
-            this.style.display = 'none';
-        }
-    };
-</script>
 
+  <!-- Modal HTML -->
+  <div class="modal-galeria" id="modalGaleria">
+    <button class="cerrar-modal" id="cerrarModalGaleria" aria-label="Cerrar">&times;</button>
+    <img src="" alt="Imagen ampliada" id="imgModalGaleria" />
+  </div>
+
+  <script>
+    // Añadir clase y evento click a todas las imágenes de la galería
+    document.querySelectorAll('.gallery-container img').forEach(img => {
+      img.addEventListener('click', () => {
+        const modal = document.getElementById('modalGaleria');
+        const modalImg = document.getElementById('imgModalGaleria');
+        modalImg.src = img.src;
+        modal.style.display = 'flex';
+      });
+    });
+
+    // Cerrar modal al hacer click en el botón cerrar o fuera de la imagen
+    document.getElementById('cerrarModalGaleria').addEventListener('click', () => {
+      document.getElementById('modalGaleria').style.display = 'none';
+    });
+
+    document.getElementById('modalGaleria').addEventListener('click', e => {
+      if (e.target === e.currentTarget) {
+        e.currentTarget.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
